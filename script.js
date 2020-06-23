@@ -1,4 +1,4 @@
-//Need an array of questions
+//Set up an array of objects with each object having a question, four possible answers, and one correct answer.  Identify the correct answer using index.
 
 var QandA = [
     {
@@ -24,12 +24,39 @@ var QandA = [
     }
 ];
 
+//Connect the quiz section on the index.html with a variable.
 var questionsContainer = document.querySelector(".questions");
+console.log("questionsContainer: " + questionsContainer);
+
+//Use createElement to populate the page with questions and answers.
+//* <div class="questions"></div>
+// var QandA = [
+//   'Fred Rodolfo',
+//   'Tutor',
+//   'San Diego',
+//   'Computer Science'
+// ];
+// <div class="profile"
+//   <div>Fred Rodolfo</div>
+//   <div>Tutor</div>
+//   <div>San Diego</div>
+//   <div>Computer Science</div>
+// </div> */}
+// var profileContainer = document.querySelector('.profile');
+// var personInfo;
+
+// var para = document.createElement("P");               // Create a <p> element
+// para.innerText = "This is a paragraph";               // Insert text
+// document.body.appendChild(para);                      // Append <p> to <body>
+
+for (var i = 0; i < QandA.length; i++) {
+    QandA = document.createElement('div');
+    QandA.innerHTML = question[i];
+    questionsContainer.appendChild(questions);
+}
+console.log("questionsContainer: " + questionsContainer);
 
 
-var 
-
-createElement
 
 //function to start timer, and a variable for time left.
 // var timeLeft = 60;

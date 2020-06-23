@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Game</title>
-    <link rel="stylesheet" src="style.css">
-    <script src="script.js">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="script.js"></script>
 
 </head>
 <body>
     
-    <navbar>View Highscores</navbar> 
-
+    <nav class="topbar">View High Scores 
+        <div class="timer">Timer: <id="counter">60</id></div>
+    </nav>
     <div id="quiz">
         <div class="questions"></div>
             
-        <button id="submit">Get Results</button>
-        <div id="results">
-        </div>
+        <button id="submit">Submit</button>
     </div>
 </body>
 </html>
