@@ -25,7 +25,7 @@ var QandA = [
 ];
 
 //Connect the quiz section on the index.html with a variable.
-var questionsContainer = document.querySelector(".questions");
+var questionsContainer = document.querySelector(".questionBlock");
 console.log("questionsContainer: " + questionsContainer);
 
 //Use createElement to populate the page with questions and answers.
@@ -49,26 +49,37 @@ console.log("questionsContainer: " + questionsContainer);
 // para.innerText = "This is a paragraph";               // Insert text
 // document.body.appendChild(para);                      // Append <p> to <body>
 
-for (var i = 0; i < QandA.length; i++) {
-    QandA = document.createElement('div');
-    QandA.innerHTML = question[i];
-    questionsContainer.appendChild(questions);
-}
-console.log("questionsContainer: " + questionsContainer);
+function renderQuestions() {
+    // Clear questions element
+    questionBlock.innerHTML = "";
 
+    for (var i = 0; i < QandA.length; i++) {
+        var questionBlock = questionBlock[i];
+
+        var questionDiv = document.createElement('div');
+        questionDiv.innerHTML = question[i];
+        answersDiv.innerHTML = answers[i];
+        questionBlock.appendChild(questionBlock);
+    }
+
+}
+console.log("questionDiv: " + questionDiv);
 
 
 //function to start timer, and a variable for time left.
-// var timeLeft = 60;
+var timeLeft = 10;
+var timerId = setInterval(function() {
+  // my statements go here
+  if (timeLeft === 0) {
+    clearInterval(timerId);
+  } else {
+    timeLeft--;
+  }
+  console.log(timeLeft);
+}, 1000);
 
-// setInterval(function() {
-//     timeLeft--}, 1000);
-// }
 
-// setInterval(function(){ alert("Hello"); }, 3000);
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-//Need a submit button. 
+//Add a submit button. 
 
 //Determine correct answer by an event listener, onclick the item is compared to the correct answer. (need input, correct answer and score variables.) If response = correct answer, add to score.  Could we identify the correct answer as an index value in the array of possible answers?
 
