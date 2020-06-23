@@ -1,10 +1,47 @@
 //Need an array of questions
 
-//foreach loop to cycle through questions
+var QandA = [
+    {
+        question: "For what sport was Abraham Lincoln enshrined in a Sports Hall of Fame for having a stellar record of just one loss?",
+        answers: ["baseball", ",football", "wrestling", "soccer"],
+        rightAnswer: 3
+    },{
+        question: "Which NBA basketball legend appeared in a movie with Bruce Lee?",
+        answers: ["Wilt Chamberlain", "Kareem Abdul-Jabbar", "Julius Erving", "Michael Jordan"],
+        rightAnswer: 2
+    },{
+        question: "Which of America's Founding Fathers had a house which was discovered to have about one thousand two hundred bone pieces from about ten human skeletons?",
+        answers: ["John Adams", "George Washington", "Alexander Hamilton", "Benjamin Franklin"],
+        rightAnswer: 4
+    },{
+        question: "What city was the first capital of the United States?",
+        answers: ["New York NY", "Plymouth MA", "Jamestown VA", "Washington DC"],
+        rightAnswer: 1
+    },{
+        question: "Who was first U.S. president to be impeached?",
+        answers: ["Bill Clinton", "Andrew Johnson", "Richard Nixon", "Donald Trump"],
+        rightAnswer: 2
+    }
+];
+
+var questionsContainer = document.querySelector(".questions");
+
+
+var 
+
+createElement
 
 //function to start timer, and a variable for time left.
+// var timeLeft = 60;
 
-//Need an array of answer options, length 4, of which one is the correct answer.
+// setInterval(function() {
+//     timeLeft--}, 1000);
+// }
+
+// setInterval(function(){ alert("Hello"); }, 3000);
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//Need a submit button. 
 
 //Determine correct answer by an event listener, onclick the item is compared to the correct answer. (need input, correct answer and score variables.) If response = correct answer, add to score.  Could we identify the correct answer as an index value in the array of possible answers?
 
@@ -20,14 +57,5 @@
 
 var score = 0;
 var input;
-var timeLeft;
 var gameOver; //true or false 
-var questions = [
-    "What former NBA player appeared in a Bruce Lee movie?",
-    " ",
-    " ",
-    " ",
-
-    : Kareem Abdul Jabbar in The Game Of Death 
-]
-}
+var input 
