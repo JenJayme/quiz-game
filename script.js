@@ -29,7 +29,7 @@ var QandA = [
 var sid;
 
 //Amount of time left to complete the quiz.
-var timeLeft; //start at 75 seconds or 75000 milliseconds
+var timeLeft = 75; //start at 75 seconds or 75000 milliseconds
 
 //index of question to retrieve, default to 0.
 var nextQuestion = 0;
@@ -38,13 +38,16 @@ var nextQuestion = 0;
 var award = 500;
 
 //Number of seconds to deduct for every wrong answer.
-var penalty = 15; //milliseconds = 15000
+var penalty = 15; 
 
 //Bucket for score, starts at 0.
 var score = 0;
 
 //The key to use for storing the high scores in and retrieving the high scores from local storage.
-//???
+const LS_KEY = "High Scores";
+
+//A collection of high scores
+var highScoreArray = [];
 
 //Create functions for three major tasks.
 
@@ -63,65 +66,87 @@ var score = 0;
             timeLeft = 75000;
             startTimer();
             showQuestion();
-        }  
+        });
+    }
 
-        function showQuestion() {
-        // Clear questions element
+    function showQuestionAndAnswer(index) {
+        var QNAObject, div, ul, li, button;
+        QNAObject = QandA[index];
 
-        for (var i = 0; i < QandA.length; i++) {
-            questionDiv.innerHTML = "";
-            
-            questionDiv = questionBlock[i];
+        // Create Question div
+        div = $('<div></div>');
+        div.addClass('question');
+        div.text(QNAObject.question);
+        questionsContainer.append(div);
 
-            questionDiv = document.createElement('button');
-            questionDiv.innerHTML = question[i];
-            answersDiv.innerHTML = answers[i];
-            questionBlock.appendChild(questionBlock);
+        // Create Answer Div
+        div = $('<div></div>'); // <div></div>
+        div.addClass('asnwers'); // <div class="answers"></div>
+        ul = $('<ul></ul>');
+
+        for (var i = 0; i < QNAObject.answers.length; i++) {
+          li = $('<li></li>');
+          button = $('<button></button>');
+          button.text(QNAObject.answer[i]);
+          button.on('click', function() {
+            checkAnswer(QNAObject, i);
+          })
+          li.append(button);
+          ul.append(li);
         }
+        
+        div.append(ul);
+        questionsContainer.append(div); // We are home
+        nextQuestion++; // 1
+      }
 
+      showQuestionAndAnswer(nextQuestion);
+
+    function callBackFunc() {
+        if (timeLeft === 0) {
+            stopTimer(sid);
+        } else {
+            --timeLeft;
+        }
     };
 
+    function startTimer(callBackFunc, interval) {
+        //start the timer by using set interval()
+        sid = setInterval(callBackFunc, interval);
+    }
+
+    function stoptimer() {
+        clearInterval(sid);
+    }
+
+    function checkAnswer(qao, i) {
+        if (qao.rightAnswer === i) {
+           //TODO: awward points
+           score = score + award
+        } else {
+          // TODO: deduct time from timer
+          timeLeft = timeLeft - penalty
         }
-
-        function callBackFunc() {
-            if (timeLeft === 0) {
-                stopTimer(sid);
-            } else {
-                --timeLeft;
-            }
-        };
-
-        function startTimer(callBackFunc, interval) {
-            //start the timer by using set interval()
-            sid = setInterval(callBackFunc, interval);
-        }
-
-        function stoptimer() {
-            clearInterval(sid);
-        }
-
-};
+      }
 
     function viewHighScores {
     //Get a reference to the container where this info will be displayed.
-    //Retrieve saved high scores from local storage, if any.
+     //Retrieve saved high scores from local storage, if any.
     //Iterate through list of high scores and create HTML elements for name and score.
     //Set this list as the contents of the referenced container.
     //Hide all sibling containers and make this container visible.
     //Return values retrieved from local storage by key.
     function getValuesFromLS(key) {
-        
+    
     }
 
     //store values in local storage under a key.
-    function setValuesInLS(key, values) {
-
-    };
-
-    localStorage.setItem(key, value);
-    //convert to string
-    JSON.stringify(values)
-    localStorage.getItem(key, value);
-    //convert from string
-    JSON.parse(values)
+    function saveToLS {
+        localStorage.setItem(LS_KEY, highScoreArray);
+        //convert to string
+        JSON.stringify(values)
+        localStorage.getItem(LS_KEY, highScoreArray);
+        //convert from string
+        JSON.parse(values)
+    }
     };

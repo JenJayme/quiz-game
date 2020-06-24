@@ -33,12 +33,10 @@ h2 {
 }
 
 .questionDiv {
-    display: none;
+    display: block;
     margin: 30px;
     padding-top: 20px;
     text-align: left;
-    background-color: lightblue;
-    color: white;
 }
 
 .startBtnDiv {
@@ -46,10 +44,12 @@ h2 {
     margin: auto;
 }
 
-.welcomeDiv {
+.welcome-div {
     display: inline-block;
-    background-color: #aaaaaa;
-    color: whitesmoke;
     margin: 30px;
     padding-top: 20px;
+}
+
+.high-score-container {
+    display: none;
 }
