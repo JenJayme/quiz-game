@@ -1,0 +1,28 @@
+Sample Dynamic Creation of Elements
+-==================================
+<div class="questions"></div>
+var QandA = [
+  'Fred Rodolfo',
+  'Tutor',
+  'San Diego',
+  'Computer Science'
+];
+<div class="profile">
+  <div>Fred Rodolfo</div>
+  <div>Tutor</div>
+  <div>San Diego</div>
+  <div>Computer Science</div>
+</div>
+var profileContainer = document.querySelector('.profile');
+var personInfo;
+for (var i = 0; i < personData.length; i++) {
+  personInfo = document.createElement('div');
+  personInfo.innerHTML = personData[i];
+    <div>Fred Rodolfo</div>
+  profileContainer.append(personInfo);
+}
+RESULT AFTER TWO ITERATIONS:
+<div class="profile">
+  <div>Fred Rodolfo</div>
+  <div>Tutor</div>
+</div>

@@ -1,16 +1,55 @@
-.topbar {
+* {
+    text-align: center;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+.topbarDiv {
+    padding-top: 10px;
     background-color: purple;
     color: white;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style: bold;
     font-size: 14px;
     padding: 15px;
-    position: relative;
     padding-top: 20px;
     padding-bottom: 20px;   
 }
 
-.timer {
+.highScoreNav {
+    float: left;
+    padding-bottom: 20px;
+}
+
+.timerDiv {
     text-align: right;
     float: right;
+}
+
+.questionDiv {
+    display: none;
+    margin: 30px;
+    padding-top: 20px;
+    text-align: left;
+    background-color: lightblue;
+    color: white;
+}
+
+.startBtnDiv {
+    display: block;
+    margin: auto;
+}
+
+.welcomeDiv {
+    display: inline-block;
+    background-color: #aaaaaa;
+    color: whitesmoke;
+    margin: 30px;
+    padding-top: 20px;
 }

@@ -3,20 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
+    <title>History Trivia Quiz</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script type="text/javascript" src="script.js"></script>
 
 </head>
 <body>
     
-    <nav class="topbar">View High Scores 
-        <div class="timer">Timer: <id="counter">60</id></div>
+    <nav class="topbarDiv">
+        <span class="highScoreNav">View High Scores</span> 
+        <div class="timerDiv">Timer: <id="counter">60</id></div>
     </nav>
-    <div id="quiz">
-        <div class="questionBlock"></div>
-            
-        <button id="submit">Submit</button>
+
+    <div class="container">
+
+        <div id="welcomeDiv">
+            <h1>Welcome!</h1>
+            <h2>Test Your U.S. History Knowledge</h2>
+            <br>
+            <br>
+            <p>Following are five questions related to United States history. Once you click start, you'll have 75 seconds to choose from several answers.  Easy right?  Except, if you answer incorrectly, you'll get a time penalty and 15 seconds will be taken off the clock. Ready?  Good luck!</p>
+        </div>
+
+        <div class="questionDiv">Questions go here along with possible answers.
+            <ol class="answerList">
+                <li class="answerItem">Answer options go here</li>
+            </ol>
+        </div>
+        <br>
+        <br>
+        <button class="startBtnDiv">Start</button>
+    
     </div>
+
 </body>
 </html>
