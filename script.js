@@ -25,18 +25,103 @@ var QandA = [
     }
 ];
 
+//identifier for the instance of set internal call;
+var sid;
+
+//Amount of time left to complete the quiz.
+var timeLeft; //start at 75 seconds or 75000 milliseconds
+
+//index of question to retrieve, default to 0.
+var nextQuestion = 0;
+
+//Number of points to award for every correct answer.
+var award = 500;
+
+//Number of seconds to deduct for every wrong answer.
+var penalty = 15; //milliseconds = 15000
+
+//Bucket for score, starts at 0.
+var score = 0;
+
+//The key to use for storing the high scores in and retrieving the high scores from local storage.
+//???
+
+//Create functions for three major tasks.
+
+    function showWelcomeMessage {
 //Connect the quiz section on the index.html with a variable pointing to a div.
-var questionDiv = document.querySelector(".questionDiv");
-console.log("questionsContainer: " + questionsContainer);
+//Set a reference to a container with Welcome message and set the contents to the message.
+        var questionDiv = document.querySelector(".questionDiv");
+        console.log("questionsContainer: " + questionsContainer);
+    };
 
-function showWelcomeMessage {
+    function startQuiz {
+    //Get a reference to the container where this info will be displayed.
+    //Reset timeLeft if its not at the default value. 
+
+        $("#startBtn").on("click", function() {
+            timeLeft = 75000;
+            startTimer();
+            showQuestion();
+        }  
+
+        function showQuestion() {
+        // Clear questions element
+
+        for (var i = 0; i < QandA.length; i++) {
+            questionDiv.innerHTML = "";
+            
+            questionDiv = questionBlock[i];
+
+            questionDiv = document.createElement('button');
+            questionDiv.innerHTML = question[i];
+            answersDiv.innerHTML = answers[i];
+            questionBlock.appendChild(questionBlock);
+        }
+
+    };
+
+        }
+
+        function callBackFunc() {
+            if (timeLeft === 0) {
+                stopTimer(sid);
+            } else {
+                --timeLeft;
+            }
+        };
+
+        function startTimer(callBackFunc, interval) {
+            //start the timer by using set interval()
+            sid = setInterval(callBackFunc, interval);
+        }
+
+        function stoptimer() {
+            clearInterval(sid);
+        }
 
 };
 
-function startQuiz {
+    function viewHighScores {
+    //Get a reference to the container where this info will be displayed.
+    //Retrieve saved high scores from local storage, if any.
+    //Iterate through list of high scores and create HTML elements for name and score.
+    //Set this list as the contents of the referenced container.
+    //Hide all sibling containers and make this container visible.
+    //Return values retrieved from local storage by key.
+    function getValuesFromLS(key) {
+        
+    }
 
-};
+    //store values in local storage under a key.
+    function setValuesInLS(key, values) {
 
-function viewHighScores {
+    };
 
-};
+    localStorage.setItem(key, value);
+    //convert to string
+    JSON.stringify(values)
+    localStorage.getItem(key, value);
+    //convert from string
+    JSON.parse(values)
+    };
