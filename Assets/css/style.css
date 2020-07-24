@@ -1,5 +1,8 @@
-* {
+body {
+    background-color: black;
+    color: blanchedalmond;
     text-align: center;
+    height: 100%;
 }
 
 h1 {
@@ -10,21 +13,52 @@ h2 {
     padding-top: 20px;
 }
 
+.container {
+    background-color: black;
+    height: 75%;
+    opacity: 75%;
+    color: blanchedalmond;
+}
+
+.hero-image {
+    background-image: url('/quiz-game/images/throne.jpg');
+    width: 100%;
+    height: 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    text-align: center;
+    position: relative;
+    margin-top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blanchedalmond;
+}
+
 .topbarDiv {
-    padding-top: 10px;
-    background-color: purple;
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 80px;
+    /* display: block; */
+    /* position: relative; */
+    background-color: #501506;
     font-style: bold;
-    font-size: 14px;
+    font-size: 16px;
     padding: 15px;
     padding-top: 20px;
-    padding-bottom: 20px;   
 }
 
 .highScoreNav {
     float: left;
     padding-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: rgb(49, 44, 37);
+    color: blanchedalmond;
 }
 
 .timerDiv {
@@ -33,7 +67,7 @@ h2 {
 }
 
 .questionDiv {
-    display: block;
+    display: inline-block;
     margin: 30px;
     padding-top: 20px;
     text-align: left;
@@ -45,11 +79,34 @@ h2 {
 }
 
 .welcome-div {
-    display: inline-block;
-    margin: 30px;
-    padding-top: 20px;
+    display: block;
+    position: relative;
+    top: 50%;
+    /* margin: 30px;
+    padding-top: 20px; */
 }
 
 .high-score-container {
     display: none;
 }
+
+#myVideo {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("../images/supernova.png"); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding-bottom: 20px;
+  }

@@ -1,41 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History Trivia Quiz</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <script type="text/javascript" src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Game of Thrones Trivia Quiz</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-    
-    <nav class="topbarDiv">
-        <span class="highScoreNav">View High Scores</span> 
-        <div class="timerDiv">Timer: <id="counter">75txt</id></div>
+    <nav class="navbar nav topbarDiv">
+        <span class="highScoreNav">View High Scores</span>
+        <div class="timerDiv countdown-bar" id="countdownID">Timer: <id="counter">75txt</id>
+        </div>
     </nav>
+        
+    <!--Hero image-->
+    <div class="hero-image">
+        <!-- <img src="images/throne.jpg" /> -->
 
-    <div class="container">
+        <!--Video hero banner-->
+        <!-- <div id="backimg" class="video-container banner"> -->
+        <!--Video hero banner-->
 
-        <div class="welcome-div">
-            <h1>Welcome!</h1>
-            <h2>Test Your U.S. History Knowledge</h2>
-            <p>Following are five questions related to United States history. Once you click start, you'll have 75 seconds to choose from several answers.  Easy right?  Except, if you answer incorrectly, you'll get a time penalty and 15 seconds will be taken off the clock. Ready?  Good luck!</p>
+        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YjpHIeGMOQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe> -->
+
+        <!-- <video autoplay muted loop id="myVideo">
+            <source src="https://media.giphy.com/media/UW1FgFobxIOntHhqNl/giphy.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="container">
+            <div class="row" id="welcomeDiv">
+                <div class='col'>
+                    <div class="welcome-div hero-text">
+                        <h1>Welcome!</h1>
+                        <h2>Test Your Game of Thrones Knowledge</h2>
+                    </div>
+                    <button class="startBtnDiv btn btn-warning" type="button" id="startBtn">start</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div id="questionsContainer" class="questionDiv">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ol id="answerList" class="list-group answerList">
+                        <!-- <li class="answerItem list-group-item">Answer options go here</li> -->
+                    </ol>
+                </div>
+            </div>
         </div>
-
-        <div class="questionDiv">Questions go here along with possible answers.
-            <ol class="answerList">
-                <li class="answerItem">Answer options go here</li>
-            </ol>
-        </div>
-
-        <button class="startBtnDiv" id="startBtn">Start</button>
 
         <div class="high-score-container"></div>
-    
-    </div>
 
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Assets/visual-countdown-timer/visual-countdown-timer/js/script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
+<footer>
+    <!-- Image by <a href="https://pixabay.com/users/14398-14398/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=247488">Epic Images</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=247488">Pixabay</a> -->
+</footer>
+
 </html>

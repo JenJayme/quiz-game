@@ -1,0 +1,130 @@
+body {
+    background-color: black;
+    color: blanchedalmond;
+    text-align: center;
+    height: 100%;
+}
+
+h1 {
+    padding-top: 20px;
+}
+
+h2 {
+    padding-top: 20px;
+}
+
+.container {
+    background-color: black;
+    height: 75%;
+    opacity: 75%;
+    color: blanchedalmond;
+}
+
+.hero-image {
+    float: none;
+    width: 100%;
+    height: auto;
+    background-image: url('images/throne.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-text {
+    text-align: center;
+    position: relative;
+    margin-top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: blanchedalmond;
+}
+
+.topbarDiv {
+    height: 80px;
+    /* display: block; */
+    /* position: relative; */
+    background-color: #501506;
+    font-style: bold;
+    font-size: 16px;
+    padding: 15px;
+    padding-top: 20px;
+}
+
+.highScoreNav {
+    float: left;
+    padding-bottom: 20px;
+}
+
+.list-group-item {
+    background-color: rgb(49, 44, 37);
+    color: blanchedalmond;
+}
+
+.timerDiv {
+    text-align: right;
+    float: right;
+}
+
+.questionDiv {
+    display: inline-block;
+    margin: 30px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.startBtnDiv {
+    display: block;
+    margin: auto;
+}
+
+.welcome-div {
+    display: block;
+    position: relative;
+    top: 50%;
+    /* margin: 30px;
+    padding-top: 20px; */
+}
+
+.hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.high-score-container {
+    display: none;
+}
+
+#myVideo {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translate(-50%, -50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url("../images/supernova.png"); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    padding-bottom: 20px;
+  }
+div.countdown-bar (
+    width: 0;
+    height: 20px;
+    margin-bottom: 20px; 
+    border: 1px solid rgb (233,8,8);
+    background-color: rgba(189,184,184,0.788);
+)
+
+div.countdown-bar div:nth-of-type(1) {
+    width: 0;
+    height: 100%;
+}
