@@ -56,6 +56,7 @@ var highScoreArray = [];
     //Reset timeLeft if its not at the default value. 
 
 function showQuestionAndAnswer(nextQuestion) {
+    $('#rollQuestions').addClass('hidden');
     var QNAObject, div, ul, li, button;
 
     for (var i = 0; i < QandA.length; i++) {
@@ -187,6 +188,8 @@ function setup () {
 
     $("#rollQuestions").on("click", function () {
         console.log('Rolling quiz. Time left = ' + timeLeft);
+        $("rollQuestions").addClass('hidden');
+        alert("The timer will start with 75 seconds on the clock as soon as you click OK.")
         startTimer();
         showQuestionAndAnswer(nextQuestion);
     })
