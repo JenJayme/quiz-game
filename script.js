@@ -101,7 +101,7 @@ function runClock() {
 };
 
 function startTimer() {
-    timeLeft = 75000;
+    timeLeft = 75;
     setInterval(runClock, 1000)
 
     //start the timer by using set interval()
@@ -167,10 +167,11 @@ function viewHighScores() {
 function showOpeningMessage () {
     $(welcomeDiv).text(
     "Following are five questions related to the books and blockbuster HBO series. Once you click start, you'll have 75 seconds to choose from several answers. Easy right? Except, if you answer incorrectly, you'll get a time penalty and 15 seconds will be taken off the clock. Ready? Good luck!")
-    $(welcomeDiv).append(`<button id="rollQuestions" class="startBtnDiv btn btn-warning">Start quiz</button>`);
+    // $(welcomeDiv).append(`<button id="rollQuestions" class="startBtnDiv btn btn-warning">Start quiz</button>`);
 }
 
 function setup () {
+
     $("answerListItem").on('click', function () {
         var chosen = this.QNAObject.answers[i];
         checkAnswer(QNAObject.rightAnswer, chosen);
@@ -181,6 +182,7 @@ function setup () {
         $('welcomeDiv').addClass('hidden');
         $('hero-text').addClass('hidden')
         $('#startBtn').addClass('hidden');
+        $('#rollQuestions').removeClass('hidden');
     });
 
     $("#rollQuestions").on("click", function () {
