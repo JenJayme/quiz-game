@@ -14,46 +14,36 @@
 <body>
     <nav class="navbar nav topbarDiv">
         <span class="highScoreNav">View High Scores</span>
-        <div class="timerDiv countdown-bar" id="countdownID">Timer: <id="counter">75txt</id>
-        </div>
+        <div class="timerDiv" id="counter">Timer: 75txt</div>
     </nav>
-        
-    <!--Hero image-->
+
+    <!-- Hero image -->
     <div class="hero-image">
-        <!-- <img src="images/throne.jpg" /> -->
+        <!-- <img src="images/throne.jpg" class="hero-image"></img> -->
+    </div>
 
-        <!--Video hero banner-->
-        <!-- <div id="backimg" class="video-container banner"> -->
-        <!--Video hero banner-->
+    <div class="container">
 
-        <!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/YjpHIeGMOQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope;" allowfullscreen></iframe> -->
-
-        <!-- <video autoplay muted loop id="myVideo">
-            <source src="https://media.giphy.com/media/UW1FgFobxIOntHhqNl/giphy.mp4" type="video/mp4">
-        </video> -->
-
-        <div class="container">
-            <div class="row" id="welcomeDiv">
-                <div class='col'>
-                    <div class="welcome-div hero-text">
-                        <h1>Welcome!</h1>
-                        <h2>Test Your Game of Thrones Knowledge</h2>
-                    </div>
-                    <button class="startBtnDiv btn btn-warning" type="button" id="startBtn">start</button>
+        <div class="row">
+            <div class='col'>
+                <div id="welcomeDiv" class="welcome-div hero-text">
+                    <h1>Welcome!</h1>
+                    <h2>Test Your Game of Thrones Knowledge</h2>
+                </div>
+                <button class="startBtnDiv btn btn-warning" type="button" id="startBtn">start</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div id="questionsContainer" class="questionDiv">
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div id="questionsContainer" class="questionDiv">
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <ol id="answerList" class="list-group answerList">
-                        <!-- <li class="answerItem list-group-item">Answer options go here</li> -->
-                    </ol>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ol id="answerList" class="list-group answerList">
+                    <!-- <li class="answerItem list-group-item">Answer options go here</li> -->
+                </ol>
             </div>
         </div>
 
@@ -65,6 +55,9 @@
     <script type="text/javascript" src="script.js"></script>
 </body>
 <footer>
+    <!-- <div class="countdown-bar" id="countdownID" style="width: 200px; height: 20px; background-color: rgb(189, 195, 199); border-color: rgb(231, 76, 60);">
+        <div style="background-color: rgb(192, 57, 43); width: 200px;"></div>
+        <span class="timerBar">Timer expired!</span></div> -->
     <!-- Image by <a href="https://pixabay.com/users/14398-14398/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=247488">Epic Images</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=247488">Pixabay</a> -->
 </footer>
 

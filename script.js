@@ -1,25 +1,27 @@
+// var countdown = require('Assets/visual-countdown-timer/script.js');
+
 
 //Set up an array of objects with each object having a question, four possible answers, and one correct answer.  Identify the correct answer using index.
 var QandA = [
     {
-        question: "For what sport was Abraham Lincoln enshrined in a Sports Hall of Fame for having a stellar record of just one loss?",
-        answers: ["baseball", ",football", "wrestling", "soccer"],
+        question: "What year was George R.R. Martin's book 'A Game of Thrones' published?",
+        answers: ["1989", "2003", "1996", "2005"],
         rightAnswer: 2
     }, {
-        question: "Which NBA basketball legend appeared in a movie with Bruce Lee?",
-        answers: ["Wilt Chamberlain", "Kareem Abdul-Jabbar", "Julius Erving", "Michael Jordan"],
+        question: "What was the name of Jon Snow's direwolf?",
+        answers: ["Lady", "Ghost", "Grey Wind", "Wolf"],
         rightAnswer: 1
     }, {
-        question: "Which of America's Founding Fathers had a house which was discovered to have about one thousand two hundred bone pieces from about ten human skeletons?",
-        answers: ["John Adams", "George Washington", "Alexander Hamilton", "Benjamin Franklin"],
+        question: "At whose castle did the 'Red Wedding' take place?",
+        answers: ["Winterfell", "Dragonstone", "Casterly Rock", "Riverrun"],
         rightAnswer: 3
     }, {
-        question: "What city was the first capital of the United States?",
-        answers: ["New York NY", "Plymouth MA", "Jamestown VA", "Washington DC"],
+        question: "Which dragon did Daenerys ride most frequently?",
+        answers: ["Drogon", "Rhaegal", "Viserion", "Aegon"],
         rightAnswer: 0
     }, {
-        question: "Who was first U.S. president to be impeached?",
-        answers: ["Bill Clinton", "Andrew Johnson", "Richard Nixon", "Donald Trump"],
+        question: "At the beginning of the series, how many children do Ned and Catelyn Stark have?",
+        answers: ["Four", "Five", "Three", "Six"],
         rightAnswer: 1
     }
 ];
@@ -28,7 +30,7 @@ var QandA = [
 var sid;
 
 //Amount of time left to complete the quiz.
-var timeLeft = 75; //start at 75 seconds or 75000 milliseconds
+var timeLeft = 75000; //start at 75 seconds or 75000 milliseconds
 
 //index of question to retrieve, default to 0.
 var nextQuestion = 0;
@@ -86,17 +88,25 @@ function showQuestionAndAnswer(nextQuestion) {
     console.log(nextQuestion);
 }
 
-function callBackFunc() {
+function runClock() {
+    $('#counter').text(timeLeft);
     if (timeLeft === 0) {
         stopTimer(sid);
     } else {
-        --timeLeft;
+        var newTime = --timeLeft;
+        console.log(timeLeft);
+        $('#counter').text(newTime);
+        return timeLeft
     }
 };
 
 function startTimer() {
+    timeLeft = 75000;
+    setInterval(runClock, 1000)
+
     //start the timer by using set interval()
-    countdown('countdownID', 0, 0, 0, 75);
+    // setInterval(() => runClock(), 75000);
+    // countdown('countdownID', 0, 0, 1, 75);
     // // Countdown Loading Bar
     // $config.loadingBars_width = 200;
     // $config.loadingBars_height = 20;
@@ -109,12 +119,12 @@ function startTimer() {
     // $config.timer_font_weight = 700;
     // $config.timer_font ='Verdana';
     // $config.timer_font_size = 12;
-    // $config.endtime_message ='Timer expired!';
 }
 
-
 function stoptimer() {
+    console.log('Timer ran out!');
     clearInterval(sid);
+    $config.endtime_message ='Timer expired!';
 }
 
 function checkAnswer(qao, chosen) {
@@ -122,9 +132,15 @@ function checkAnswer(qao, chosen) {
         //TODO: awward points
         score = score + award
     } else {
+        penaltyDeduct();
         // TODO: deduct time from timer
-        timeLeft = timeLeft - penalty
     }
+}
+
+function penaltyDeduct () {
+    timeLeft = timeLeft - penalty
+    return timeLeft
+    console.log('Sorry, a penalty was deducted from your time.')
 }
 
 function viewHighScores() {
@@ -151,22 +167,24 @@ function viewHighScores() {
 function showOpeningMessage () {
     $(welcomeDiv).text(
     "Following are five questions related to the books and blockbuster HBO series. Once you click start, you'll have 75 seconds to choose from several answers. Easy right? Except, if you answer incorrectly, you'll get a time penalty and 15 seconds will be taken off the clock. Ready? Good luck!")
-    $(welcomeDiv).append(`<button id="rollQuestions" class="btn btn-warning">Start quiz</button>`);
+    $(welcomeDiv).append(`<button id="rollQuestions" class="startBtnDiv btn btn-warning">Start quiz</button>`);
 }
-
 
 function setup () {
     $("answerListItem").on('click', function () {
-    checkAnswer(QNAObject, i);
+        var chosen = this.QNAObject.answers[i];
+        checkAnswer(QNAObject.rightAnswer, chosen);
     });
 
     $("#startBtn").on("click", function startQuiz () {
         showOpeningMessage();
         $('welcomeDiv').addClass('hidden');
-        $('hero-text').addClass('hidden');
+        $('hero-text').addClass('hidden')
+        $('#startBtn').addClass('hidden');
     });
 
-    $("#rollQuestions").on("click", function rollQueiz () {
+    $("#rollQuestions").on("click", function () {
+        console.log('Rolling quiz. Time left = ' + timeLeft);
         startTimer();
         showQuestionAndAnswer(nextQuestion);
     })
